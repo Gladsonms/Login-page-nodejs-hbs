@@ -14,8 +14,13 @@
      
     </ul>
     <form class="form-inline my-2 my-lg-0">
+      {{#if status}}
      
       <button class="btn btn-light my-2 my-sm-0 text-danger" type="submit" style="text-decoration: none;"><a href="/logout">Logout</a></button>
+      {{else}}
+      <button class="btn btn-light my-2 my-sm-0 text-danger" type="submit" style="text-decoration: none;"><a href="/">Login</a></button>
+      {{/if}}
+
     </form>
   </div>
 </nav>

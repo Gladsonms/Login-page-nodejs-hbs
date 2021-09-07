@@ -31,8 +31,9 @@ router.get('/', function(req, res, next) {
     },
   ]
   let name=req.session.name;
+  let status=req.session.loggedIn
   console.log(req.session);
-  res.render('home',{products,name});
+  res.render('home',{products,name,status});
 });
 
 module.exports = router;
