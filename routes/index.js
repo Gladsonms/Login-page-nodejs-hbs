@@ -22,7 +22,7 @@ router.post('/login',(req,res)=> {
 
 if(username==req.body.username && password==req.body.password)
 {
-  console.log("succes");
+
   
   req.session.loggedIn=true;
   req.session.name=username;
@@ -35,7 +35,8 @@ if(username==req.body.username && password==req.body.password)
 else
 
 {
-  res.redirect('/login')
+
+  res.render('index',{message:"Please enter valid username and password"})
 }
 })
 router.get('/logout',(req,res)=> {
