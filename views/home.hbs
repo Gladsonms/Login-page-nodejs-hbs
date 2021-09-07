@@ -9,25 +9,25 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Oders <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#">{{name}} <span class="sr-only">(current)</span></a>
       </li>
      
     </ul>
     <form class="form-inline my-2 my-lg-0">
      
-      <button class="btn btn-primary my-2 my-sm-0" type="submit">Logout</button>
+      <button class="btn btn-light my-2 my-sm-0 text-danger" type="submit" style="text-decoration: none;"><a href="/logout">Logout</a></button>
     </form>
   </div>
 </nav>
       </header>
-    <section >
-
+        <section >
+     
         <div class="container-fluid">
             <div class="container">
-            <div class="row mt-5 p-3">
+            <div class="row  mt-5">
                 {{#each products}}
             <div class="col-md-3 ">
-                <div class="card pl-4" style="width: 15rem; height: 25rem;">
+                <div class="card" style="width: 15rem; height: 25rem;">
   <img class="card-img-top" src="{{this.image}}" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">{{this.name}}</h5>
@@ -41,3 +41,4 @@
         </div>
         </div>
     </section>
+

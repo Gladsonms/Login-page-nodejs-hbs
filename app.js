@@ -8,6 +8,8 @@ var indexRouter = require('./routes/index');
 var homeRouter = require('./routes/home');
 var hbs=require('express-handlebars')
 var app = express();
+var session=require('express-session');
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -19,9 +21,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({secret:"key",resave: false,
+saveUninitialized: true ,cookie:{maxAge:600000}}))
 
 app.use('/', indexRouter);
 app.use('/home', homeRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
