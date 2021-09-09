@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  console.log(req.session);
+  //console.log(req.session);
   let products=[
     {
       name:"i Phone",
@@ -32,7 +32,7 @@ router.get('/', function(req, res, next) {
   ]
   let name=req.session.name;
   let status=req.session.loggedIn
-  console.log(req.session);
+  //console.log(req.session);
   res.render('home',{products,name,status});
 });
 
